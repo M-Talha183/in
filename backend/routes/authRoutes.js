@@ -70,7 +70,7 @@ router.post('/login', loginUser);
 router.get('/user', protect, getUserInfo);
 
 // ✅ Image upload route
-router.post('/upload-image', upload.single('images'), (req, res) => {
+router.post('/upload-image', upload.single('image'), (req, res) => {
   if (!req.file) {
     return res.status(400).json({ message: 'Please upload a file' });
   }
