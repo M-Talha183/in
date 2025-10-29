@@ -1,12 +1,15 @@
 require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
-
+const connectDB = require('./config/db.js');
 const app = express();
+const authRoutes = require('./routes/authRoutes.js')
 
 // Middleware
+
+
+
 app.use(
     cors({
         origin: process.env.FRONTEND_URL || '*',
@@ -17,6 +20,11 @@ app.use(
 )
 
 app.use(express.json());
+
+// connect to database
+connectDB();
+
+app.use('/api/v1/auth', authRoutes);
 
 const PORT = process.env.PORT || 5000;
 
