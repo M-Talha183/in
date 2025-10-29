@@ -5,7 +5,7 @@ const path = require('path');
 const connectDB = require('./config/db.js');
 const app = express();
 const authRoutes = require('./routes/authRoutes.js')
-
+const IncomeRoutes = require('./routes/IncomeRoutes.js')
 // Middleware
 
 
@@ -25,7 +25,7 @@ app.use(express.json());
 connectDB();
 
 app.use('/api/v1/auth', authRoutes);
-
+app.use("/api/v1/income",IncomeRoutes)
 const PORT = process.env.PORT || 5000;
 
 // server uploads folder as static
