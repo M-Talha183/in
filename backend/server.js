@@ -7,6 +7,7 @@ const app = express();
 const authRoutes = require('./routes/authRoutes.js')
 const IncomeRoutes = require('./routes/IncomeRoutes.js')
 const expenseRoutes = require('./routes/expenseRoutes.js')
+const dashboardRoutes = require("./routes/dashboardRoutes.js")
 // Middleware
 
 
@@ -28,6 +29,7 @@ connectDB();
 app.use('/api/v1/auth', authRoutes);
 app.use("/api/v1/income",IncomeRoutes)
 app.use("/api/v1/expense",expenseRoutes)
+app.use("api/v1/dashboard",dashboardRoutes)
 const PORT = process.env.PORT || 5000;
 
 // server uploads folder as static
