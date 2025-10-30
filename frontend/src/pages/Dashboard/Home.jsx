@@ -1,10 +1,14 @@
 import React from 'react'
+import DashBoardLayout from '../../components/layouts/DashBoardLayout'
 
 function Home() {
   return (
-    <div>
+    <DashBoardLayout>  
+        <div>
       home
     </div>
+    </DashBoardLayout>
+
   )
 }
 

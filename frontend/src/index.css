@@ -19,15 +19,15 @@ body {
     overflow-x: hidden;
 }
 
-/* .input-box{
+.input-box{
     @apply w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
 }
 
 .btn-primary{
-    @apply w-full text-sm font-medium text-white bg-violet-600 hover:bg-violet-700 rounded-md px-4 py-2 mt-3 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2;
-} */
+    @apply w-full text-sm font-medium text-white bg-violet-600 hover:bg-violet-700 rounded-md px-4 py-2 mt-3 focus:outline-none  focus:ring-2 focus:ring-violet-500 focus:ring-offset-2;
+}
 
-.input-box {
+/* .input-box {
 @apply w-full px-4 py-2 text-sm text-gray-700 placeholder-gray-400 
   bg-white border border-gray-300 rounded-lg shadow-sm
   focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500
@@ -41,4 +41,4 @@ body {
   rounded-lg px-4 py-2.5 mt-3 shadow-sm
   focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2
   transition-all duration-200;
-}
+} */
