@@ -1,0 +1,51 @@
+import React from 'react'
+import { LuArrowRight } from 'react-icons/lu'
+import moment from 'moment'
+import TransactionInfocard from '../Cards/TransactionInfocard';
+
+const RecentTransactions = ({transactions, onSeeMore}) => {
+  return (
+    <div className='card'>
+      <div className='flex items-center justify-between'>
+        <h5 className='text-lg font-semibold'>Recent Transactions</h5>
+
+        <button className='card-btn' onClick={onSeeMore}>
+          See All <LuArrowRight size={16} />
+        </button>
+      </div>
+
+      <div className='mt-6'>
+        {!transactions || transactions.length === 0 ? (
+          <p className='text-gray-400 text-sm text-center py-8'>
+            No transactions yet
+          </p>
+        ) : (
+          transactions.slice(0, 5).map((item) => {
+            // Get title based on available fields
+            const getTitle = () => {
+              if (item.type === 'expense') {
+                return item.category || item.title || item.description || 'Expense';
+              } else {
+                return item.source || item.title || item.description || 'Income';
+              }
+            };
+
+            return (
+              <TransactionInfocard
+                key={item._id}
+                title={getTitle()}
+                icon={item.icon}
+                date={moment(item.date).format("Do MMM YYYY")}
+                amount={item.amount}
+                type={item.type}
+                hideDeleteBtn
+              />
+            );
+          })
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default RecentTransactions
